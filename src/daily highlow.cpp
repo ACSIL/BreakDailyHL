@@ -253,5 +253,22 @@ SCSFExport scsf_breaking_dh(SCStudyInterfaceRef sc)
             t.BeginValue = 88;
             sc.UseTool(t);
         }
+        {
+            s_UseTool t;
+            t.Clear();
+            t.ChartNumber = sc.ChartNumber;
+            t.DrawingType = DRAWING_TEXT;
+            t.FontSize = 10;
+            t.FontBold = false;
+            t.AddMethod = UTAM_ADD_OR_ADJUST;
+            t.UseRelativeVerticalValues = 1;
+            t.Color = RGB(255, 255, 255);
+            t.Region = 0;
+            t.Text.Format("Time of bar %i back: %i-%i-%i %i:%0.2i:%0.2i", nr_of_mins_back.GetInt(), pb_year, pb_month, pb_day, pb_hour, pb_minute, pb_second);
+            t.LineNumber = 5;
+            t.BeginDateTime = 5;
+            t.BeginValue = 88;
+            sc.UseTool(t);
+        }
     }
 }
